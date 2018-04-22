@@ -1,0 +1,29 @@
+{
+  "name": "graphqlnodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reksar2012/GraphQLNodeJs.git"
+  },
+  "author": "reksar2012",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reksar2012/GraphQLNodeJs/issues"
+  },
+  "homepage": "https://github.com/reksar2012/GraphQLNodeJs#readme",
+  "devDependencies": {
+    "express": "^4.16.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express-graphql": "^0.6.12",
+    "graphql": "^0.13.2",
+    "lodash": "^4.17.5",
+    "mongoose": "^5.0.15"
+  }
+}
