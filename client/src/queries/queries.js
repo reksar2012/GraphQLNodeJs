@@ -1,60 +1,49 @@
-import {gql} from 'apollo-boost';
+import { gql } from "apollo-boost";
 
-const getAuthorsQuery=gql`
-{
-  authors{
-    name 
-    age
-    id
+const getAuthorsQuery = gql`
+  {
+    authors {
+      name
+      id
+    }
   }
-}
 `;
 
-const getBooksQuery=gql`
-{
-  books
+const getBooksQuery = gql`
   {
-    name 
-    genre
-    id
+    books {
+      name
+      id
+    }
   }
-}
 `;
-const addBookMutation=gql`
-mutation($name:String!,$genre:String!,$authorid:ID!,){
-  addBook(
-    name: $name,
-    genre:$genre,
-    authorid:$authorid
-  ){
-    id
-    name
+
+const addBookMutation = gql`
+  mutation AddBook($name: String!, $genre: String!, $authorId: ID!) {
+    addBook(name: $name, genre: $genre, authorId: $authorId) {
+      name
+      id
+    }
   }
-}
 `;
-const getBookQuery=gql`
-query($id:ID){
-  book(id:$id)
-  {
-    name 
-    genre
-    id
-    author{
-      id,
-      name,
-      age,
-      books{
-        name,
+
+const getBookQuery = gql`
+  query GetBook($id: ID) {
+    book(id: $id) {
+      id
+      name
+      genre
+      author {
         id
+        name
+        age
+        books {
+          name
+          id
+        }
       }
     }
   }
-}
 `;
 
-export{
-  getAuthorsQuery,
-  getBooksQuery,
-  addBookMutation,
-  getBookQuery
-};
+export { getAuthorsQuery, getBooksQuery, addBookMutation, getBookQuery };
